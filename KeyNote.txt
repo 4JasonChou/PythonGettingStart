@@ -1,0 +1,10 @@
+紀錄一些Func
+
+Array Metod :
+初始化
+- np.zeros(size)
+- np.arange(startValue,endValue)
+反轉
+- Array[::-1]
+依照順序重構矩陣
+- reshape( size * size )
