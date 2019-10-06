@@ -1,8 +1,6 @@
 import json
-# python -m pip install pymongo
 import pymongo
 import time
-
 
 # InsertOrUpdate Dic _ 底層
 def UpdateUnderIndexDic( underDic , key ):
@@ -11,14 +9,6 @@ def UpdateUnderIndexDic( underDic , key ):
 	else :
 		underDic.update({key:1})
 		
-# InsertOrUpdate Dic _ 外層
-def UpdateTopIndexDic( topDic , keyOne , keyTwo ):
-	if keyOne in topDic :
-		UpdateUnderIndexDic(topDic[keyOne],keyTwo)
-	else :
-		tempUderDic = { keyTwo : 1 }
-		topDic.update( { keyOne : tempUderDic } )
-
 # InsertOrUpdate Dic _ 外層
 def UpdateTopIndexDicV2( topDic , keyOne , keyTwoList ):
 	# Key One 是否存在
@@ -68,7 +58,7 @@ def UpdateKeywordV2( mongoDbCollection , mainKey , SubKeyList ):
 		mongoDbCollection.update_one(condition, {'$set': { 'SubKeyList': result['SubKeyList'] } } ,upsert=True )
 
 # Main Start
-print("Hello Lab. - Ch 1 KCM ")
+print("LabTraining - Ch 1 KCM ")
 
 # Init雙重的 Dic 
 myUnderDic = { 'DefaultUnder' : 0 }
