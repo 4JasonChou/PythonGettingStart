@@ -88,11 +88,10 @@ with open( fileName+'.json' , 'r' , encoding="utf-8" ) as reader:
 localtime = time.asctime( time.localtime(time.time()) )
 print("StartTime :", localtime)
 
-count = 0
+
 print("Under processing ...")
 # 3.處理資料
 for key in wikiSampleJson :
-	count = count +1 
 	# 判斷與取得 一個 單字清單
 	myNTypelist = IdentifyWordTypeV2( wikiSampleJson[key])
     # 對清單做CRUD
